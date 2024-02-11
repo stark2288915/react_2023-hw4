@@ -3,22 +3,25 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import {MainComponent} from "./pages/main-page/MainComponent";
-import {UsersPage} from "./pages/users-pages/UsersPage";
-import {PostsPage} from "./pages/posts-pages/PostsPage";
+import {MainPage} from "./pages/main-page/MainPage";
+import {AlbumsPage} from "./pages/albums-page/AlbumsPage";
+import {TodosPage} from "./pages/todos-page/TodosPage";
+import {CommentsPage} from "./pages/comments-page/CommentsPage";
+import {PostDetailsPage} from "./pages/post-details-page/PostDetailsPage";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const routes = createBrowserRouter([
     {path:'/',
-        element: <MainComponent/>,
+        element: <MainPage/>,
         errorElement:'error',
         children:[
-            {path:'users', element: <UsersPage/>},
-            {path:'posts', element: <PostsPage/>}
+            {path:'todos', element: <TodosPage/>},
+            {path:'albums', element: <AlbumsPage/>},
+            {path:'comments', element: <CommentsPage/>},
+            {path:'comments/post', element: <PostDetailsPage/>}
         ]
-    },
-    {path:'/asd', element: 'hello2'}
+    }
 ])
 
 root.render(
