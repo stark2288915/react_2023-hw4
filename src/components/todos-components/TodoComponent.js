@@ -1,14 +1,17 @@
 import React from 'react';
 
 const TodoComponent = ({todo}) => {
+    
+    const {userId, id, title, completed} = todo;
+
     return (
         <div>
             <hr/>
             <ul>
-                <li>userId: {todo.userId}</li>
-                <li>id: {todo.id}</li>
-                <li>title: {todo.title}</li>
-                <li>completed: {todo.completed}</li>
+                <li>userId: {userId}</li>
+                <li>id: {id}</li>
+                <li>title: {title}</li>
+                <li>completed: {completed}</li>
             </ul>
             <hr/>
         </div>
